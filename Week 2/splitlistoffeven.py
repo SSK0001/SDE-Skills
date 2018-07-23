@@ -14,9 +14,9 @@ class Solution:
         even = evenhead
 
         while(odd.next != None and even.next != None):
-            temp = even.next
-            odd.next = temp
-            even.next = temp.next
+            # temp = even.next
+            odd.next = even.next
+            even.next = odd.next.next
             odd = odd.next
             even = even.next
 
