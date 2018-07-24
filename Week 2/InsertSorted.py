@@ -1,4 +1,11 @@
+# Time taken: 16 mins
 
+'''
+Approach: three conditions for this problem
+1. new node has to be placed at the head: if statment
+2. if new nodes to be placed in middle: while loop
+3. new node to be placed at the end of the list: if neither of top 2, insert at end
+'''
 
 class Node:
     def __init__(self,value):
