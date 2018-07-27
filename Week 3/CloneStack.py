@@ -1,21 +1,25 @@
 # Clone Stack
 
 
-def cloneStack(self,original):
+def cloneStack(original):
     '''
     type original: original stack
     type clone: clone stack with this
     rtype: clone
     '''
-    original = original.stack
     if len(original) == 0:
         return original
-    tempStack = []
+
+    tempStack = queue.LifoQueue()
+
     clone = []
+
     while(len(original) > 0):
-        tempStack.append(original.pop())
-    while(len(tempStack) > 0):
-        value = tempStack.pop()
-        original.append(value)
-        clone.append(value)
+        tempStack.put(original.pop())
+
+    while(not tempStack.empty()):
+        stackTop = tempStack.pop()
+        original.append(stackTop)
+        clone.append(stackTop)
+
     return clone
